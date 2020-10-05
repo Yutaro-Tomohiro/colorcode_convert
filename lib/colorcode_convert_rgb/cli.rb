@@ -5,10 +5,10 @@ module ColorcodeConvertRgb
   class CLI < Thor
     desc "to_ints {Hexagonal_color_code}", "Converts a hexadecimal color code to a decimal number."
     def to_ints(color)
-      if color.match(/[a-fA-F0-9]{6}/)
-        hex = color
-      elsif color.match(/[#][a-fA-F0-9]{6}/)
+      if color.match(/^[#][a-fA-F0-9]{6}$/)
         hex = color.delete("#")
+      elsif color.match(/^[a-fA-F0-9]{6}$/)
+        hex = color
       else
         return puts 'Please enter the correct code.(e.g. #ffffff or ffffff )'
       end
