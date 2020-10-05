@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
 require "colorcode_convert_rgb"
-StrConvertUtils::CLI.start
+ColorcodeConvertRgb::CLI.start
